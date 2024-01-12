@@ -15,7 +15,8 @@
     "noImplicitAny": true,
     "strictNullChecks": true,
     "noUnusedLocals": true,
-    "types": ["@react-three/fiber", "@types/node", "vite/client"]
+    "types": ["@react-three/fiber", "@types/node", "vite/client"],
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "build/**/*", "*.png"]

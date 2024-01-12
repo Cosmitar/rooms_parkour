@@ -31,3 +31,12 @@ body {
   color: black;
   -webkit-font-smoothing: antialiased;
 }
+
+#joystick_zone {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 25vh;
+  background-color: #f00a;
+}

@@ -1,12 +1,11 @@
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
-import DemoScene from './scenes/DemoScene/DemoScene'
+import OpenSpaceScene from './scenes/OpenSpaceScene/OpenSpaceScene'
 
 const App = () => {
   return (
-    <Canvas camera={{ fov: 70, position: [0, 0, 3] }}>
-      <OrbitControls />
-      <DemoScene />
+    <Canvas shadows camera={{ position: [8, 8, 8], fov: 30 }}>
+      <color attach='background' args={['#ececec']} />
+      <OpenSpaceScene />
     </Canvas>
   )
 }
