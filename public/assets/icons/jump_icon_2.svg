@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   fill="#000000"
+   width="549.51477"
+   height="738.84613"
+   viewBox="0 0 35.71846 48.024998"
+   enable-background="new 0 0 52 52"
+   xml:space="preserve"
+   version="1.1"
+   id="svg830"
+   sodipodi:docname="capslock-svgrepo-com.svg"
+   inkscape:version="1.1.2 (b8e25be8, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs834" /><sodipodi:namedview
+   id="namedview832"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   showgrid="false"
+   inkscape:zoom="0.8675"
+   inkscape:cx="274.92795"
+   inkscape:cy="370.02882"
+   inkscape:window-width="1312"
+   inkscape:window-height="916"
+   inkscape:window-x="0"
+   inkscape:window-y="38"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="svg830" />
+<g
+   id="g828"
+   transform="translate(-8.1407707,-1.975)">
+	<path
+   d="M 43.6,21.1 27.2,2.5 C 26.6,1.8 25.4,1.8 24.8,2.5 L 8.4,21.1 C 7.8,21.8 8.3,23 9.3,23 H 17 v 12.5 c 0,0.8 0.7,1.5 1.5,1.5 h 15 C 34.3,37 35,36.3 35,35.5 V 23 h 7.7 c 1,0 1.5,-1.2 0.9,-1.9 z"
+   id="path824" />
+	<path
+   d="m 33.5,43 h -15 C 17.7,43 17,43.7 17,44.5 v 4 c 0,0.8 0.7,1.5 1.5,1.5 h 15 c 0.8,0 1.5,-0.7 1.5,-1.5 v -4 C 35,43.7 34.3,43 33.5,43 Z"
+   id="path826" />
+</g>
+</svg>

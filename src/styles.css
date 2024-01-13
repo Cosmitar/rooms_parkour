@@ -32,11 +32,81 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-#joystick_zone {
+.controls-container {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100vw;
   height: 25vh;
   background-color: #f000;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.5));
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  display: flex;
+  justify-content: stretch;
+}
+#joystick_zone {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50vw;
+  height: 25vh;
+  background-color: #f000;
+}
+#joystick_zone::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/icons/joy-hud.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: invert(100%) sepia(1%) saturate(0%) hue-rotate(112deg) brightness(107%) contrast(100%) drop-shadow(0 0 0.75rem cyan);
+  opacity: 0.5;
+  content: "";
+}
+
+#buttons_zone {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50vw;
+  height: 25vh;
+  background-color: #0f00;
+  border-left: 1px solid #dadadaaa;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: column;
+  
+}
+
+.joystickButton {
+  display: block;
+  /* width: 35%; */
+  height: 25%;
+  background-color: #fff4;
+  padding: 15px;
+  border-radius: 100%;
+  margin: 10px;
+  min-width: 50px;
+  min-height: 50px;
+  border: 3px solid #9994;
+}
+.joystickButton.main {
+  padding: 20px;
+  /* width: 50%; */
+  height: 50%;
+  min-width: 100px;
+  min-height: 100px;
+}
+.joystickButton img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  filter: invert(100%) sepia(1%) saturate(0%) hue-rotate(112deg) brightness(107%) contrast(100%);
+  opacity: 0.5;
 }
