@@ -700,9 +700,17 @@ const Ecctrl = forwardRef<RapierRigidBody, EcctrlProps>(
     useEffect(() => {
       // Initialize directional light
       if (followLight) {
-        dirLight = characterModelRef.current.parent.parent.children.find(item => {
-          return item.name === 'followLight'
-        }) as THREE.DirectionalLight
+        // finds scene
+        let object = characterModelRef.current
+        while (object.parent !== null) {
+          object = object.parent
+        }
+
+        object?.traverse(item => {
+          if (item.name === 'followLight') {
+            dirLight = item as THREE.DirectionalLight
+          }
+        })
       }
     })
 

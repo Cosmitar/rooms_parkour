@@ -27,13 +27,13 @@ export default forwardRef<Group & { children: ReactNode }, GroupProps>(function 
   const entity = ECS.useCurrentEntity()
   return (
     <group ref={outterRef}>
-      <KeyboardControls map={keyboardMap}>
-        <Suspense fallback={null}>
+      <Suspense fallback={null}>
+        <KeyboardControls map={keyboardMap}>
           <Ecctrl debug={false} animated={true} camInitDis={-10} followLight position={entity.initialPosition}>
             <AnimationLocalPlayer key={entity.characterUrl}>{children}</AnimationLocalPlayer>
           </Ecctrl>
-        </Suspense>
-      </KeyboardControls>
+        </KeyboardControls>
+      </Suspense>
     </group>
   )
 })

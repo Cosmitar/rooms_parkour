@@ -26,7 +26,7 @@ export default function OpenSpaceScene() {
         <Players />
         <Systems />
         <Map />
-        <FloorProtoInstances>
+        <FloorProtoInstances receiveShadow castShadow>
           <Scenario />
         </FloorProtoInstances>
         {/* <RoughPlane /> */}
