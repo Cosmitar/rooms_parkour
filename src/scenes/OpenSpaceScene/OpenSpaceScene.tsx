@@ -1,11 +1,14 @@
 import { Environment } from '@react-three/drei'
 import Lights from '../../components/Lights/Lights'
-import { Physics, vec3 } from '@react-three/rapier'
+import { Physics } from '@react-three/rapier'
 import Map from '../../components/Map/Map'
 import { RoughPlane } from '../../components/RoughPlane/RoughPlane'
 import Players, { createPlayer } from '../../entities/Players/Players'
-import { useEffect, useLayoutEffect } from 'react'
-import Systems from '../../systems/systems'
+import { useLayoutEffect } from 'react'
+import Systems from '../../systems/Systems'
+import Scenario from '../../components/Scenario/Scenario'
+import { FloorProtoInstances } from '../../models/FloorProto/FloorProto'
+import Monitor from '../../utils/Monitor/Monitor'
 
 export default function OpenSpaceScene() {
   useLayoutEffect(() => {
@@ -17,11 +20,16 @@ export default function OpenSpaceScene() {
 
       <Lights />
 
+      <Monitor />
+
       <Physics timeStep='vary' debug={true}>
         <Players />
         <Systems />
         <Map />
-        <RoughPlane />
+        <FloorProtoInstances>
+          <Scenario />
+        </FloorProtoInstances>
+        {/* <RoughPlane /> */}
       </Physics>
     </>
   )
