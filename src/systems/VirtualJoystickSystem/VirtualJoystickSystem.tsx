@@ -4,6 +4,7 @@ import { useGame, useJoystickControls } from '../../utils/Ecctrl/Ecctrl'
 import { MathUtils } from 'three'
 import jumpButtonImage from '../../../public/assets/icons/jump-icon.svg'
 import waveButtonImage from '../../../public/assets/icons/say_hi-icon.svg'
+import { isTouchableScreen } from '../../utils/helpers'
 
 export default function VirtualJoystickSystem() {
   const setJoystick = useJoystickControls(state => state.setJoystick)
@@ -13,8 +14,18 @@ export default function VirtualJoystickSystem() {
   const releaseAllButtons = useJoystickControls(state => state.releaseAllButtons)
 
   useLayoutEffect(() => {
+    // do nothing on non-touchable screens (desktop)
+    if (!isTouchableScreen()) return
+
+    const container = document.querySelector('.controls-container') as HTMLElement
     const joystickZone = document.querySelector('#joystick_zone') as HTMLElement
     const btnsZone = document.querySelector('#buttons_zone') as HTMLElement
+
+    // display controls on touchable screens
+    joystickZone.style.display = 'block'
+    btnsZone.style.display = 'flex'
+    container.style.display = 'flex'
+
     // prevents context menu
     joystickZone.addEventListener('contextmenu', function (event) {
       event.preventDefault()
@@ -23,7 +34,7 @@ export default function VirtualJoystickSystem() {
     joystickZone.addEventListener('touchstart', e => e.stopPropagation())
     joystickZone.addEventListener('touchmove', e => e.stopPropagation())
 
-    // add buttons
+    // buttons factory
     const createButton = ({
       id,
       icon,
@@ -58,9 +69,8 @@ export default function VirtualJoystickSystem() {
       return btn
     }
 
-    createButton({id: 'wave', icon: waveButtonImage, action: waveAction })
-    createButton({id: 'jump', icon: jumpButtonImage, action: jumpAction, main: true })
-    
+    createButton({ id: 'wave', icon: waveButtonImage, action: waveAction })
+    createButton({ id: 'jump', icon: jumpButtonImage, action: jumpAction, main: true })
 
     // creates joystic
     const joystick = nipplejs.create({
@@ -69,8 +79,8 @@ export default function VirtualJoystickSystem() {
       mode: 'static',
       position: {
         top: '50%',
-        left: '50%'
-      }
+        left: '50%',
+      },
     })
 
     // connects Nipplejs to Ecctrl joystick

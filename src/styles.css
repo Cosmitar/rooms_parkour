@@ -46,6 +46,7 @@ body {
   display: flex;
   justify-content: stretch;
 }
+
 #joystick_zone {
   position: absolute;
   bottom: 0;
